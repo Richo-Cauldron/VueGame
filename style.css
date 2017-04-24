@@ -1,0 +1,44 @@
+#headings {
+  width: 800px;
+}
+.heading {
+  width: 350px;
+  height: 75px;
+  border: solid 1px black;
+  font-size: 10px;
+  text-align:center;
+  display: inline-block;
+}
+.heading:nth-child(2) {
+  float: right;
+}
+.pointsCont {
+  width: 350px;
+  height: 25px;
+  background-color: #d1d1d1;
+}
+.points {
+  background-color: green;
+  height: 25px;
+  color: white;
+  font-size: 15px;
+}
+.totals{
+	margin-top: 5px;
+}
+.gameNavCont {
+  width: 800px;
+  height: 75px;
+  border: solid 1px black;
+  margin-top: 10px;
+  text-align: center;
+}
+.gameBtn {
+  margin-top: 25px;
+}
+.gameLog {
+  width: 800px;
+  height: 75px;
+  border: 1px solid black;
+  margin-top: 10px;
+}
