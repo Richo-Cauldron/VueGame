@@ -40,7 +40,11 @@
   		
   	</template>
   </div>
-  <div class="gameLog"></div>
+  <div class="gameLog">
+  	<ul>
+  		<li v-for="log in gameLog">{{ log }}</li>
+  	</ul>
+  </div>
 </div>
 </body>
 <script src="game.js"></script>
