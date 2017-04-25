@@ -35,12 +35,12 @@
   			<button @click="attack">attack</button>
 	  		<button @click="specialAttack">special attack</button>
 	  		<button @click="health">heal</button>
-	  		<button @click="toggle">quit</button>
+	  		<button @click="restart()">quit</button>
   		</div>
   		
   	</template>
   </div>
-  <div class="gameLog">
+  <div v-if="!show" class="gameLog">
   	<ul>
   		<li v-for="log in gameLog">{{ log }}</li>
   	</ul>

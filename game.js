@@ -13,16 +13,17 @@ new Vue({
 	},
 	methods: {
 		toggle: function(type){
-			if (type == 'restart'){
+			this.show = !this.show
+		},
+		restart: function(){
+			console.log('restart called');
+				this.toggle();
 				this.pointsTotal = 100 ;
 				this.playerPoints = 100 ;
 				this.monsterPoints = 100 ;
 				this.plyrPointsWidth = 350 ;
 				this.mstrPointsWidth = 350 ;
 				this.gameLog = [] ;
-				console.log(this.gameLog.length);
-			}
-			this.show = !this.show
 		},
 		generateGameDamage: function(x=1){
 			this.mstrAtk = Math.floor(Math.random() *20) * x;
@@ -44,7 +45,6 @@ new Vue({
 			if(this.playerPoints <= 0) {
 				this.playerPoints = 0;
 				alert('The monster has won the battle!!');
-				this.toggle('restart');
 			}
 			if(this.monsterPoints >= 100){
 				this.monsterPoints = 100;
@@ -52,7 +52,6 @@ new Vue({
 			if(this.monsterPoints <= 0) {
 				this.monsterPoints = 0;
 				alert('Congratulations, You have won the battle!!');
-				this.toggle('restart');
 			}
 		},
 		healthBarCalculation: function(playerHBAdj, monsterHBAdj){
@@ -60,14 +59,18 @@ new Vue({
 			this.mstrPointsWidth = this.monsterPoints/100*350;
 		},
 		logEntry: function(playerAtk, monsterAtk, type){
-			console.log(type);
-			console.log(this.playerPoints, this.monsterPoints);
+			
+			// console.log(type);
+			// console.log(this.playerPoints, this.monsterPoints);
 			if(type == 'health'){
-			this.gameLog.push('You recieved ' + playerAtk + 'points of ' + type);
-			this.gameLog.push('Monster recieved ' + monsterAtk + 'points of ' + type);
+				this.gameLog.push('You recieved ' + playerAtk + 'points of ' + type);
+				this.gameLog.push('Monster recieved ' + monsterAtk + 'points of ' + type);
+			}
+			if(this.playerPoints <=0  || this.monsterPoints <=0){
+					this.restart();
 			} else {
-			this.gameLog.push('You hit the monster with ' + playerAtk + 'points of ' + type);
-			this.gameLog.push('Monster hits you with ' + monsterAtk + 'points of ' + type);
+					this.gameLog.push('You hit the monster with ' + playerAtk + 'points of ' + type);
+					this.gameLog.push('Monster hits you with ' + monsterAtk + 'points of ' + type);
 			}
 		},
 		specialAttack: function(){
@@ -83,8 +86,5 @@ new Vue({
 			this.logEntry(this.plyrAtk, this.mstrAtk, 'health');
 			
 		}
-	}, 
-	
-	computed: {
 	}
 })

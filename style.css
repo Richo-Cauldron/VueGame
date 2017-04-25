@@ -38,7 +38,21 @@
 }
 .gameLog {
   width: 800px;
-  height: 75px;
   border: 1px solid black;
   margin-top: 10px;
+  list-style-type:none;
+}
+.gameLog ul {
+  list-style: none;
+  width: 600px;
+  margin-left: 50px;
+}
+.gameLog li {
+text-align: center;
+}
+.gameLog li:nth-child(even) {
+  background-color: #bbb  ;
+}
+.gameLog li:nth-child(odd) {
+  background-color: #eee  ;
 }
