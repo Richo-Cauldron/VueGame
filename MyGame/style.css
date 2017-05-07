@@ -1,0 +1,58 @@
+#headings {
+  width: 800px;
+}
+.heading {
+  width: 350px;
+  height: 75px;
+  font-size: 10px;
+  text-align:center;
+  display: inline-block;
+}
+.heading:nth-child(2) {
+  float: right;
+}
+.pointsCont {
+  width: 350px;
+  height: 25px;
+  background-color: #d1d1d1;
+  border: solid 1px black;
+}
+.points {
+  background-color: green;
+  height: 25px;
+  color: white;
+  font-size: 15px;
+}
+.totals{
+	margin-top: 5px;
+}
+.gameNavCont {
+  width: 800px;
+  height: 75px;
+  border: solid 1px black;
+  margin-top: 10px;
+  text-align: center;
+}
+.gameBtn {
+  margin-top: 25px;
+}
+.gameLog {
+  width: 800px;
+  border: 1px solid black;
+  margin-top: 10px;
+  list-style-type:none;
+}
+.gameLog ul {
+  list-style: none;
+  width: 600px;
+  margin-left: 50px;
+}
+.gameLog li {
+text-align: center;
+}
+.gameLog li:nth-child(even) {
+  background-color: #bbb  ;
+}
+.gameLog li:nth-child(odd) {
+  background-color: #eee  ;
+}
